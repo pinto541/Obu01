@@ -7,6 +7,7 @@ import Search from "./Search";
 import Menu from "./Menu";
 import "fontsource-roboto";
 import Copyright from "./Copyright";
+import MyCarousel from "./MyCarousel";
 
 const Home = () => {
   const [productsBySell, setProductsBySell] = useState([]);
@@ -43,7 +44,10 @@ const Home = () => {
       <div style={{ padding: 25 }}>
         <Menu />
       </div>
-      <div>{/* <Search style={{ padding: "5px" }} /> */}</div>
+      <div style={{ maxHeight: "500px", margin: "-15px 0 2rem 0" }}>
+        <MyCarousel />
+      </div>
+
       <div className="container  py-3">
         <div className="row mt-3">
           <div className="col-md-12 h2-card">
@@ -61,8 +65,8 @@ const Home = () => {
                   key={i}
                   className="col-6 col-sm-6  col-md-6 col-lg-3 my-2 clor p-1"
                 >
-                   <Link href={`/product/${product._id}`} >
-                  <Card product={product} />
+                  <Link href={`/product/${product._id}`}>
+                    <Card product={product} />
                   </Link>
                 </div>
               ))}
@@ -75,8 +79,8 @@ const Home = () => {
                   key={i}
                   className="col-6 col-sm-6  col-md-6 col-lg-3 my-2 clor p-1"
                 >
-                   <Link href={`/product/${product._id}`} >
-                  <Card product={product} />
+                  <Link href={`/product/${product._id}`}>
+                    <Card product={product} />
                   </Link>
                 </div>
               ))}
@@ -89,14 +93,13 @@ const Home = () => {
                   key={i}
                   className="col-6 col-sm-6  col-md-6 col-lg-3 my-2 clor p-1"
                 >
-                   <Link href={`/product/${product._id}`} >
-                  <Card product={product} />
+                  <Link href={`/product/${product._id}`}>
+                    <Card product={product} />
                   </Link>
                 </div>
               ))}
             </div>
           </div>
-          
         </div>
       </div>
 

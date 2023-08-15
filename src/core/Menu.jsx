@@ -12,6 +12,7 @@ import InputBase from "@material-ui/core/InputBase";
 import Badge from "@material-ui/core/Badge";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
+// import { useHistory } from "react-router-dom";
 
 import MenuIcon from "@material-ui/icons/Menu";
 import MoreIcon from "@material-ui/icons/MoreVert";
@@ -32,6 +33,7 @@ import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import StoreIcon from "@material-ui/icons/Store";
 
 import "./Menu.css";
+import Search from "./Search";
 
 const isActive = (history, path) => {
   if (history.location.pathname === path) {
@@ -105,6 +107,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const MaterialAppBar = ({ history }) => {
+  // const history = useHistory();
+
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -258,7 +262,7 @@ const MaterialAppBar = ({ history }) => {
   );
 
   return (
-    <div className={classes.grow}>
+    <div className={classes.grow} style={{ marginBottom: "2rem" }}>
       <AppBar position="fixed">
         <Toolbar>
           <a href="/" style={{ color: "#000" }}>
@@ -277,10 +281,37 @@ const MaterialAppBar = ({ history }) => {
             </Typography>
           </a>
           <div className="menu-serch">
-            <AiOutlineSearch style={{ marginRight: "0.5rem" }} />
-            <AiOutlineShoppingCart style={{ marginLeft: "0.2rem" }} />
+            <AiOutlineSearch
+              onClick={() => history.push("/shop")}
+              style={{
+                marginRight: "0.9rem",
+                color: "green",
+                fontSize: "26px",
+              }}
+            />
+            <AiOutlineShoppingCart
+              style={{
+                marginLeft: "0.2rem",
+                fontSize: "26px",
+                color: "orangered",
+              }}
+              onClick={() => history.push("/cart")}
+            />
           </div>
+
           <div className={classes.grow} />
+          <div
+            // style={{  }}
+            className="d-flex justify-content-center align-items-center content-search"
+          >
+            <div className="form-control1">
+              <input
+                type="text"
+                className="input-field"
+                placeholder="Search products..."
+              />
+            </div>
+          </div>
 
           <div className={classes.sectionDesktop}>
             <Link style={isActive(history, "/")} to="/">
@@ -374,8 +405,6 @@ const MaterialAppBar = ({ history }) => {
               style={{}}
               className="menu-burger"
             >
-            
-          
               <MoreIcon />
             </AiOutlineMenu>
           </div>

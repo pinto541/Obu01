@@ -16,13 +16,13 @@ import Card from "./Card";
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
-    minWidth: 120,
+    maxWidth: 120,
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
   },
   tField: {
-    width: 800,
+    width: 250,
     marginTop: 2,
   },
   root: {
@@ -141,8 +141,10 @@ const Search = () => {
 
   return (
     <div className="row">
-      <div className="container mb-3">{searchForm()}</div>
-      <div className="container-fluid mb-3">{searchedProducts(results)}</div>
+      <div width={20} className="container mb-3">
+        {searchForm()}
+      </div>
+      {/* <div className="container-fluid mb-3">{searchedProducts(results)}</div> */}
     </div>
   );
 };

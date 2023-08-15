@@ -1,0 +1,47 @@
+/* carousel.css */
+
+/* Apply styles to the Carousel component */
+.carousel-container {
+  width: 100%; /* Adjust the width as needed */
+  margin: 0 auto;
+  /* border-radius: 8px; */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  height: 500px;
+}
+.carousel .slide {
+  min-height: 500px;
+}
+/* Apply styles to each slide */
+.slide {
+  position: relative;
+}
+
+/* Style the slide images */
+.slide img {
+  max-width: 100%;
+  min-height: 500px;
+  /* border-radius: 8px; */
+  object-fit: fill;
+}
+
+/* Style the slide legends */
+.slide p.legend {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px 10px;
+  /* border-radius: 4px; */
+  font-size: 14px;
+}
+
+.legend {
+  font-size: 3rem !important;
+  font-weight: 900 !important;
+  color: violet !important;
+  margin-left: 0.1rem !important;
+  text-align: left;
+}

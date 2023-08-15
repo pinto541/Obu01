@@ -176,7 +176,6 @@ const Card = ({
                 <p className="price newPrice">Rs {product.price}</p>
                 <p>Rs 0.00</p>
                 <p>38% off</p>
-                
               </div>
             </div>
           </div>

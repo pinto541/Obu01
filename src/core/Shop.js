@@ -10,7 +10,7 @@ import Menu from "./Menu";
 import Search from "./Search";
 import { prices } from "./fixedPrices";
 import Copyright from "./Copyright";
-
+import second from "./Shop.css";
 const Shop = () => {
   const [myFilters, setMyFilters] = useState({
     filters: { category: [], price: [] },
@@ -120,12 +120,16 @@ const Shop = () => {
 
   return (
     <>
-     <div style={{ padding: 25 }}></div>
-    <Menu/>
-      
-      
-      
-      
+      <div style={{ padding: 25 }}></div>
+      <Menu />
+
+      <div
+        className="earch"
+        style={{ padding: "1rem 3rem", maxWidth: "200px", display: "none" }}
+      >
+        <Search />
+      </div>
+
       <div className="container  py-3">
         <div className="row mt-3">
           <div className="col-md-12 h2-card">
@@ -143,8 +147,8 @@ const Shop = () => {
                   key={i}
                   className="col-6 col-sm-6  col-md-6 col-lg-3 my-2 clor p-1"
                 >
-                   <Link href={`/product/${product._id}`} >
-                  <Card product={product} />
+                  <Link href={`/product/${product._id}`}>
+                    <Card product={product} />
                   </Link>
                 </div>
               ))}
@@ -157,8 +161,8 @@ const Shop = () => {
                   key={i}
                   className="col-6 col-sm-6  col-md-6 col-lg-3 my-2 clor p-1"
                 >
-                   <Link href={`/product/${product._id}`} >
-                  <Card product={product} />
+                  <Link href={`/product/${product._id}`}>
+                    <Card product={product} />
                   </Link>
                 </div>
               ))}
@@ -171,8 +175,8 @@ const Shop = () => {
                   key={i}
                   className="col-6 col-sm-6  col-md-6 col-lg-3 my-2 clor p-1"
                 >
-                   <Link href={`/product/${product._id}`} >
-                  <Card product={product} />
+                  <Link href={`/product/${product._id}`}>
+                    <Card product={product} />
                   </Link>
                 </div>
               ))}
@@ -183,7 +187,6 @@ const Shop = () => {
       </div>
 
       <Copyright />
-      
     </>
   );
 };
