@@ -43,6 +43,7 @@ const Home = () => {
     <>
       <div style={{ padding: 25 }}>
         <Menu />
+        {/* more */}
       </div>
       <div style={{ maxHeight: "500px", margin: "-15px 0 2rem 0" }}>
         <MyCarousel />
